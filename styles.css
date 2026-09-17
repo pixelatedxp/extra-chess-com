@@ -1,0 +1,122 @@
+/* Normal text/elements -> question mark */
+
+.ch-hider-question {
+  position: relative !important;
+  color: transparent !important;
+  text-shadow: none !important;
+  user-select: none !important;
+}
+
+.ch-hider-question::after {
+  content: "?" !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  color: #aaa !important;
+  background: rgba(0, 0, 0, 0.55) !important;
+
+  border-radius: 4px !important;
+  font-weight: 700 !important;
+  pointer-events: none !important;
+}
+
+
+/* Normal elements -> blur */
+
+.ch-hider-blur {
+  filter: blur(7px) !important;
+  user-select: none !important;
+}
+
+
+/* PROFILE PICTURE - QUESTION MODE */
+
+.ch-hider-pfp-question {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.ch-hider-pfp-question > img,
+.ch-hider-pfp-question img,
+.ch-hider-pfp-question picture,
+.ch-hider-pfp-question canvas,
+.ch-hider-pfp-question svg {
+  visibility: hidden !important;
+}
+
+.ch-hider-pfp-question::after {
+  content: "?" !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: rgba(0, 0, 0, 0.65) !important;
+  color: #aaa !important;
+
+  border-radius: 50% !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+
+  pointer-events: none !important;
+}
+
+
+/* PROFILE PICTURE - BLUR MODE */
+
+.ch-hider-pfp-blur > img,
+.ch-hider-pfp-blur img,
+.ch-hider-pfp-blur picture,
+.ch-hider-pfp-blur canvas,
+.ch-hider-pfp-blur svg {
+  filter: blur(10px) !important;
+}
+
+
+/* Don't let hidden stuff be selectable */
+
+.ch-hider-question,
+.ch-hider-blur,
+.ch-hider-pfp-question,
+.ch-hider-pfp-blur {
+  user-select: none !important;
+}
+
+
+/* Flag / flair / other image-like opponent information */
+
+.ch-hider-image-hidden {
+  visibility: hidden !important;
+}
+
+.ch-hider-image-wrapper-question {
+  position: relative !important;
+}
+
+.ch-hider-image-wrapper-question::after {
+  content: "?" !important;
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  color: #aaa !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+
+  z-index: 999 !important;
+  pointer-events: none !important;
+}
+
+.ch-hider-image-blur {
+  filter: blur(6px) !important;
+}
