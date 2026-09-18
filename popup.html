@@ -81,14 +81,65 @@
       font-size: 12px;
       color: #aaa;
     }
-    select {
-      width: 100%;
+    .mode-section select,
+    .mode-section input[type="number"] {
       padding: 6px 8px;
       background: #16213e;
       color: #fff;
       border: 1px solid #444;
       border-radius: 4px;
       font-size: 13px;
+      box-sizing: border-box;
+    }
+    .mode-section select {
+      width: 100%;
+    }
+    .elo-row-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .elo-row-controls input[type="number"] {
+      flex: 1;
+      min-width: 0;
+    }
+    .elo-row-controls button {
+      padding: 6px 12px;
+      background: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .elo-row-controls button:active {
+      background: #3d8b40;
+    }
+    .blur-row {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #333;
+    }
+    .blur-row label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 12px;
+      color: #aaa;
+    }
+    .blur-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .blur-controls input[type="range"] {
+      flex: 1;
+      accent-color: #4caf50;
+    }
+    .blur-controls span {
+      font-size: 12px;
+      color: #fff;
+      min-width: 28px;
+      text-align: right;
     }
   </style>
 </head>
@@ -116,6 +167,10 @@
     <div class="switch"><input type="checkbox" id="toggleFlag" checked><span class="slider"></span></div>
   </div>
   <div class="toggle-row">
+    <label for="toggleConnection">Connection Strength</label>
+    <div class="switch"><input type="checkbox" id="toggleConnection" checked><span class="slider"></span></div>
+  </div>
+  <div class="toggle-row">
     <label for="togglePfp">Profile Picture</label>
     <div class="switch"><input type="checkbox" id="togglePfp" checked><span class="slider"></span></div>
   </div>
@@ -123,13 +178,72 @@
     <label for="toggleUsername">Username</label>
     <div class="switch"><input type="checkbox" id="toggleUsername"><span class="slider"></span></div>
   </div>
+  <div class="toggle-row">
+    <label for="toggleFakeTitle">Fake Title (you)</label>
+    <div class="switch"><input type="checkbox" id="toggleFakeTitle"><span class="slider"></span></div>
+  </div>
+
+  <div class="mode-section" id="fakeTitleRow">
+    <label for="fakeTitleValue">Title</label>
+    <select id="fakeTitleValue">
+      <option value="GM" selected>GM</option>
+      <option value="IM">IM</option>
+      <option value="NM">NM</option>
+      <option value="FM">FM</option>
+      <option value="CM">CM</option>
+      <option value="WGM">WGM</option>
+      <option value="WIM">WIM</option>
+      <option value="WFM">WFM</option>
+      <option value="WCM">WCM</option>
+      <option value="WNM">WNM</option>
+    </select>
+  </div>
+
+  <div class="toggle-row">
+    <label for="toggleFakeElo">Fake ELO (you)</label>
+    <div class="switch"><input type="checkbox" id="toggleFakeElo"><span class="slider"></span></div>
+  </div>
+
+  <div class="mode-section" id="fakeEloRow">
+    <label for="fakeEloValue">ELO</label>
+    <div class="elo-row-controls">
+      <input type="number" id="fakeEloValue" min="0" max="4000" step="1" value="1500">
+      <button type="button" id="fakeEloUpdate">Update</button>
+    </div>
+  </div>
+  <div class="toggle-row">
+    <label for="toggleFakePremium">Fake Premium Badge (you)</label>
+    <div class="switch"><input type="checkbox" id="toggleFakePremium"><span class="slider"></span></div>
+  </div>
+
+  <div class="mode-section" id="fakeBadgeRow">
+    <label for="fakeBadgeValue">Badge tier</label>
+    <select id="fakeBadgeValue">
+      <option value="diamond" selected>Diamond</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+    </select>
+  </div>
+  <div class="toggle-row">
+    <label for="toggleFakeFlair">Fake Membership Flair (you)</label>
+    <div class="switch"><input type="checkbox" id="toggleFakeFlair"><span class="slider"></span></div>
+  </div>
 
   <div class="mode-section">
     <label for="mode">Hide mode</label>
     <select id="mode">
       <option value="question">Replace with "?"</option>
       <option value="blur">Blur out</option>
+      <option value="remove">Remove completely</option>
     </select>
+  </div>
+
+  <div class="mode-section blur-row" id="blurRow">
+    <label for="blurStrength">Blur strength</label>
+    <div class="blur-controls">
+      <input type="range" id="blurStrength" min="0" max="100" step="1" value="50">
+      <span id="blurStrengthValue">50</span>
+    </div>
   </div>
 
   <script src="popup.js"></script>

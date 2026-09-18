@@ -29,7 +29,7 @@
 /* Normal elements -> blur */
 
 .ch-hider-blur {
-  filter: blur(7px) !important;
+  filter: blur(calc(7px * var(--ch-blur-mult, 1))) !important;
   user-select: none !important;
 }
 
@@ -77,7 +77,7 @@
 .ch-hider-pfp-blur picture,
 .ch-hider-pfp-blur canvas,
 .ch-hider-pfp-blur svg {
-  filter: blur(10px) !important;
+  filter: blur(calc(10px * var(--ch-blur-mult, 1))) !important;
 }
 
 
@@ -118,5 +118,14 @@
 }
 
 .ch-hider-image-blur {
-  filter: blur(6px) !important;
+  filter: blur(calc(6px * var(--ch-blur-mult, 1))) !important;
+}
+
+
+/* Fully remove the element */
+
+.ch-hider-remove,
+.ch-hider-pfp-remove,
+.ch-hider-image-remove {
+  display: none !important;
 }
