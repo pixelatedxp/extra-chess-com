@@ -1,1 +1,1 @@
-"# chess-com-hider" 
+"# Extra Chess.com Focus Mode" 

@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Chess Opponent Hider",
+  "name": "Extra Chess.com Focus Mode",
   "version": "1.0",
   "description": "Hides opponent rating, title, premium badge, and profile picture on chess.com",
   "permissions": ["activeTab", "storage"],

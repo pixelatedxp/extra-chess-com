@@ -255,6 +255,6 @@
     applyHiding();
     startObserver();
 
-    console.log("[Chess Opponent Hider] loaded");
+    console.log("[Extra Chess.com Focus Mode] loaded");
   });
 })();
