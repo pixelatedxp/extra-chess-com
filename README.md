@@ -1,1 +1,5 @@
-"# Extra Chess.com Focus Mode" 
+# **Extra Chess.com Focus Mode**
+
+Extra Chess.com Focus Mode is a lightweight Chrome extension that keeps your opponent information out of your head during live games on chess.com. By default it hides the opponent's rating, chess title, premium badge, profile picture, country flag, flair, and connection indicator, so you play the board instead of the stats. Everything runs entirely in your browser, requires no sign-in, and reacts instantly to in-game updates through a mutation observer, so the hiding stays active even when chess.com re-renders the page.
+
+The extension gives you full control over what gets hidden and how. You can choose whether each piece of information is covered with a question mark, blurred at a strength you set, or removed completely, and you can toggle any of them on or off from the toolbar popup. There is also a set of playful "fake" options that add a custom title, ELO, membership badge, or flair to your own account. Settings are saved automatically and applied in real time, and everything works across the live-game layout on chess.com.
