@@ -48,4 +48,4 @@ Open a live game on chess.com and the opponent's info is hidden using your saved
 
 ## License
 
-This project is not licensed. All rights reserved.
+MIT License. See [LICENSE](LICENSE).
